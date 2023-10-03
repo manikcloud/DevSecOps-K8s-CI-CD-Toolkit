@@ -51,15 +51,15 @@ pipeline {
     stages {
         // Uncomment other stages if needed
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Here we build the Docker image and assign it to 'app'
-                    app = docker.build("devsecops")
-                }
-            }
-        }
-
+        stage('Build') { 
+                  steps { 
+                    withDockerRegistry([credentialsId: "dockerHub", url: ""]) {
+                      script{
+                      app =  docker.build("devsecops")
+                      }
+                    }
+                  }
+          }
         stage('Push') {
             steps {
                 script {
