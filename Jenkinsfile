@@ -4,7 +4,7 @@ pipeline {
         maven 'my_mvn'  
     }
 
-  //  stages{
+   stages{
   //   stage('CompileandRunSonarAnalysis') {
   //           steps {	
 	// 	sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=manikdevsecops -Dsonar.organization=manikdevsecops -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=214d1bce94b796db1450b1dd7cc017162ca38e0b'
