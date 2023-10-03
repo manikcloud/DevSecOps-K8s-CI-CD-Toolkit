@@ -18,15 +18,15 @@ pipeline {
 	// 			}
 	// 		}
   //   }		
-	stage('Build') { 
-            steps { 
-               withDockerRegistry([credentialsId: "dockerHub", url: ""]) {
-                 script{
-                 app =  docker.build("devsecops")
-                 }
-               }
-            }
-    }
+	// stage('Build') { 
+  //           steps { 
+  //              withDockerRegistry([credentialsId: "dockerHub", url: ""]) {
+  //                script{
+  //                app =  docker.build("devsecops")
+  //                }
+  //              }
+  //           }
+  //   }
 
 	stage('Push') {
             steps {
